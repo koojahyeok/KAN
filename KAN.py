@@ -38,3 +38,14 @@ def knn_activation(w_b, w_s, B, c, x):
     '''
 
     return w_b*basis_function(x) + w_s*spline(B, c, x)
+
+
+class KANLayer(nn.Module):
+    def __init__(self, in_features, out_features):
+        super(KANLayer, self).__init__()
+        '''
+        in_features : # of input dim
+        out_features : # of output dim
+        '''
+        self.in_features = in_features
+        self.out_features = out_features
